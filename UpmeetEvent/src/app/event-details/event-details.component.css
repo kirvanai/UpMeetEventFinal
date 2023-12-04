@@ -1,0 +1,28 @@
+.appButton{
+    color: white;
+    border-radius: 30px;
+    background-color: rgba(76, 216, 255, 0.8);
+    box-shadow: 0px 2px 2px gray;
+    border-style: hidden;
+
+}
+
+.appButton:hover {    
+    
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    
+}
+
+.eventDetail{
+    margin: 25px;
+    height: 45px;
+    width: 230px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}

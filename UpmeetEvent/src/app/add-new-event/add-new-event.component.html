@@ -1,0 +1,58 @@
+<div class="slh-header">
+    <div class="slh-row">
+      <div class="col" style="flex-grow: 1;">
+        <img class="logo" src="/assets/img/logo.jpg">
+      </div>  
+      <div class="col text-center" style="flex-grow: 10;">
+        <p class="slh-name">Up Meet</p>
+      </div>
+      <div class="col" style="flex-grow: 1;">
+        <a [routerLink]="['/user', 0]">
+          <i class="fa fa-user-circle-o accountIcon" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="slh-container">
+      <div class="slh-row">
+          <div class="col blue-bar">              
+          </div>
+      </div>
+  </div>
+  <div class="slh-container">
+      <div class="slh-row">
+          <div class="col text-center" style="flex-direction: column; flex-grow: 1; background-color:white; padding: 5px 5px;">
+            <a [routerLink]="['/home']">
+                <i class="fa-regular fa-calendar icons" aria-hidden="true" style="color:purple;padding-top: 25px;"></i>
+                </a>              
+                <p class="iconText hidden-mobile">Events</p> 
+              <i class="fa-brands fa-gratipay icons" aria-hidden="true" style="color:red" (click)="setViewing('favorites')"></i>
+              <p class="iconText hidden-mobile">Favorites</p>              
+              <a [routerLink]="['/addNewEvent']">
+                <i class="fa-regular fa-calendar-plus" aria-hidden="true" style="color:green; font-size: 35px;"></i>
+                </a>
+              <p class="iconText hidden-mobile">Add Event</p>
+          </div>
+          <div class="col postContainer" style="padding-bottom: 25px; flex-direction: column; flex-grow: 10; overflow-y: auto; height: 100vh; background-color: darkgray;">
+            <form (ngSubmit)="addEvent()">
+                <p>Name:</p>
+                <input type="text" name="name" [(ngModel)]="newEvent.name">
+                <p>Date:</p>
+                <input type="text" name="date" [(ngModel)]="newEvent.date">
+                <p>Time:</p>
+                <input type="text" name="time" [(ngModel)]="newEvent.time">
+                <p>Location:</p>
+                <input type="text" name="location" [(ngModel)]="newEvent.location">
+                <p>Description</p>
+                <input type="text" name="description" [(ngModel)]="newEvent.description">
+                <p>Image:</p>
+                <input type="text" name="image" [(ngModel)]="newEvent.image">
+                <p></p>
+                <input type="submit" value="Add Event" >
+                </form>
+          </div>
+          <div class="col text-center hidden-mobile" style="flex-direction: column; flex-grow: 1; background-color:white; overflow-y: auto;">
+            
+        </div>
+      </div>    
+  </div>

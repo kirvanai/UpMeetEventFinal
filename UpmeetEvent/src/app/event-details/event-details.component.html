@@ -1,0 +1,35 @@
+<div class="container text-center" style="padding-left: 150px; padding-right: 150px">
+    <button class="eventDetail appButton" (click)="switchViewDetails()">
+      {{ !viewDetails ? 'Show Details' : 'Hide Details' }}
+    </button>
+    <i
+      class="fa-regular fa-bookmark"
+      *ngIf="!event.favorite; else notFavorite"
+      (click)="changeFavorite()"
+      style="font-size: 2rem; cursor: pointer; margin-left: 10px;"
+    ></i>
+    <ng-template #notFavorite>
+      <i
+        class="fa-solid fa-bookmark"
+        *ngIf="event.favorite"
+        (click)="changeFavorite()"
+        style="font-size: 2rem; color: rgba(76, 216, 255, 0.8); cursor: pointer; margin-left: 10px;"
+      ></i>
+    </ng-template>
+    <div *ngIf="viewDetails">
+      <form>
+        <div class="row" style="margin-top: 25px;">
+          <div class="col">
+            <h1 style="font-size: 25px;">Location</h1>
+            <p>{{ event.location }}</p>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 25px;">
+          <div class="col">
+            <h1 style="font-size: 25px;">Description</h1>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

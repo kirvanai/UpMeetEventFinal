@@ -1,0 +1,27 @@
+<div class="eventContainer">
+    <div *ngFor="let event of displayList; index as i">
+        <section class="eventBackground">
+            <div class="container event">
+
+                <div class="container container-info">
+                    <div class="wrapper">
+                        <div *ngIf="event.image != ''; else noImage">
+                            <img src="/assets/img/{{event.image}}" class="banner-image"/>
+                        </div>
+                        <ng-template #noImage>
+                            <p></p>
+                        </ng-template>
+                        <h1> {{event.name}}</h1>
+                        <p>{{event.date}} {{event.time}}</p>
+                     </div>
+                    <app-event-details [event] = "event"></app-event-details>
+                </div>                
+            </div>
+        </section>
+    </div>    
+</div>
+
+
+
+
+
